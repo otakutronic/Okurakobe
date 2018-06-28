@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="curtain_opened">カーテンをあけます。</string>
+    <string name="curtain_closed">カーテンを閉めます。</string>
+
+    <string name="lace_opened">レースをあけます。</string>
+    <string name="lace_closed">レースを閉めます。</string>
+
+    <string name="light_turned_on">電気をつけました。</string>
+    <string name="light_turned_off">電気を消しました。</string>
+
+
+    <string-array name="dont_understand">
+        <item>お話しください</item>
+        <item>ご用件はございますか</item>
+        <item>如何なさいましたか</item>
+    </string-array>
+    <string name="start_discussion">お呼びでしょうか？</string>
+
+    <string-array name="command_example">
+        <item>お試しください：部屋の電気をつけて</item>
+        <item>お試しください：カーテンを開けて</item>
+        <item>お試しください：入り口の明かりを消して</item>
+        <item>お試しください：足元の明かりを消して</item>
+        <item>お試しください：足元の明かりを消して</item>
+        <item>お試しください：全部の明かりを消して</item>
+        <item>お試しください：全部の明かりをつけて</item>
+    </string-array>
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/okura_bg_04">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="300dp">
+
+        <mji.tapia.com.okurahotel.widget.PickerView
+            android:id="@+id/picker_view_hour"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            app:pv_font="fonts/KozMinPro-Heavy.otf"
+            app:pv_space="40dp"
+            app:pv_color="#ffffff"
+            app:pv_textSize="60dp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/picker_view_hour"
+            android:layout_marginLeft="40dp"
+            android:layout_centerInParent="true"
+            android:text=":"
+            android:textSize="110sp"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <mji.tapia.com.okurahotel.widget.PickerView
+            android:id="@+id/picker_view_minute"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            app:pv_font="fonts/KozMinPro-Heavy.otf"
+            android:layout_marginStart="250dp"
+            android:layout_marginBottom="13dp"
+            app:pv_color="#ffffff"
+            app:pv_space="40dp"
+            app:pv_textSize="60dp"/>
+    </RelativeLayout>
+
+    <mji.tapia.com.okurahotel.widget.InternationalTextView
+        android:id="@+id/ok_alarm"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="35dp"
+        android:gravity="center"
+        app:language="en"
+        android:text="@string/language_setting_ok"
+        android:textColor="@color/colorText"
+        android:textSize="40sp"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/alarm_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/okura_alarm"
+            android:transitionName="alarm_icon" />
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/alarm_label"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/home_alarm_label"
+            android:textColor="@color/colorText"
+            android:textSize="28sp"
+            android:textStyle="italic"
+            android:transitionName="alarm_label" />
+
+        <mji.tapia.com.okurahotel.widget.SwitchButton
+            android:id="@+id/switch_button_alarm"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            app:kswThumbColor="#BDBDBD"
+            app:kswThumbRangeRatio="2.2"
+            app:kswThumbMargin="4dp"
+            app:kswTextOn="ON"
+            app:kswTextOff="OFF"
+            android:textColor="@color/switch_button_text_color"
+            app:kswBackDrawable="@drawable/switch_button_back"
+            android:checked="false"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

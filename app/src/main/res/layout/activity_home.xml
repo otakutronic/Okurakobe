@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/okura_bg_05"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="18"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/alarm_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/hotel_button">
+
+                <mji.tapia.com.okurahotel.widget.InternationalTextView
+                    android:id="@+id/alarm_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/home_alarm_label"
+                    android:textColor="@color/colorText"
+                    android:textSize="24sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/alarm_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/okura_alarm" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff"
+                android:orientation="vertical" />
+
+            <RelativeLayout
+                android:id="@+id/language_setting_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/hotel_button">
+
+                <ImageView
+                    android:id="@+id/language_setting_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/okura_setting_icon"
+                    android:transitionName="language_setting_icon"/>
+
+                <mji.tapia.com.okurahotel.widget.InternationalTextView
+                    android:id="@+id/language_setting_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/home_language_setting_label"
+                    android:textColor="@color/colorText"
+                    android:textSize="24sp"
+                    android:textStyle="italic"
+                    android:transitionName="language_setting_label"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/room_manager_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/hotel_button">
+
+                <mji.tapia.com.okurahotel.widget.InternationalTextView
+                    android:id="@+id/room_manager_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/home_room_manager_label"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:transitionName="room_manager_label" />
+
+                <ImageView
+                    android:id="@+id/room_manager_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/okura_room_manager_icon"
+                    android:transitionName="room_manager_icon" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#ffffff"
+                android:orientation="vertical" />
+
+            <RelativeLayout
+                android:id="@+id/sleep_mode_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/hotel_button">
+
+                <ImageView
+                    android:id="@+id/sleep_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/okura_sleep_mode" />
+
+                <mji.tapia.com.okurahotel.widget.InternationalTextView
+                    android:id="@+id/sleep_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:text="@string/home_sleep_mode_label"
+                    android:textColor="@color/colorText"
+                    android:textSize="24sp"
+
+                    android:textStyle="italic" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="16">
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/clean_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:text="@string/home_do_cleaning_label"
+            android:textColor="@color/colorText"
+            android:textSize="24sp" />
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/not_disturb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clean_room"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/home_do_not_disturb_label"
+            android:textColor="@color/colorDisabledText"
+            android:textSize="24sp" />
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/do_laundry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/not_disturb"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/home_do_laundry_label"
+            android:textColor="@color/colorDisabledText"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/not_disturb"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="63dp"
+            android:src="@drawable/mji_logo"
+            android:transitionName="okura_logo" />
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/alarm_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="17dp"
+            android:layout_toStartOf="@+id/not_disturb"
+            android:text="@string/home_alarm_off_label"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/staff_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/alarm_state"
+            android:layout_alignBottom="@+id/alarm_state"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="46dp"
+            android:text="@string/home_staff_mode_label"
+            android:textColor="@color/colorText"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

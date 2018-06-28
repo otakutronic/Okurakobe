@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="mji.tapia.com.okurahotel">
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <application
+        android:name=".OkuraHotelApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        tools:replace="android:icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.home.HomeActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.alarm.AlarmActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.room_manager.RoomManagerActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.room_manager.curtain.CurtainActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.room_manager.air_con.AirConActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.room_manager.light.LightActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.room_manager.light.LightSettingActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.sleep.SleepActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.language_setting.LanguageSettingActivity" android:screenOrientation="landscape" android:configChanges="locale"/>
+        <activity android:name=".ui.speech.SpeechActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.staff_mode.lock.LockActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.staff_mode.StaffModeActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".ui.staff_mode.log.LogActivity" android:screenOrientation="landscape"/>
+
+        <!--  Declare  Alarm Broadcast receiver here  -->
+        <receiver android:name="mji.tapia.com.service.alarm.AlarmReceiver" />
+
+        <!--  Declare  Alarm Notification Service here  -->
+        <service android:name="mji.tapia.com.service.alarm.AlarmNotificationService" />
+
+        <!--  Declare  Alarm Sound Service here  -->
+        <service android:name="mji.tapia.com.service.alarm.AlarmSoundService" />
+
+    </application>
+
+</manifest>

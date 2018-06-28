@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/okura_bg_01">
+
+    <mji.tapia.com.okurahotel.widget.ExpandableLayoutListView xmlns:expandable="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/expandableLayout"
+        android:layout_below="@id/log_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_frame"
+        android:layout_margin="20dp" />
+
+    <RelativeLayout
+        android:id="@+id/log_header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/white_frame"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+        <ImageView android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/okura_arrow"
+            android:rotation="-90"
+            android:id="@+id/back_bt" />
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:text="ERROR LOG SCREEN"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="32dp"
+            android:id="@+id/internationalTextView" />
+
+        <CheckBox
+            android:id="@+id/runtime_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="120dp"
+            android:buttonTint="#FFFFFF"
+            android:text="R"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp" />
+
+        <CheckBox
+            android:id="@+id/warning_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="30dp"
+            android:buttonTint="#FFFFFF"
+            android:text="W"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

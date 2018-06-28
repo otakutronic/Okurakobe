@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/okura_bg_03">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="400dp">
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_gravity="center"
+            android:src="@drawable/okura_arrow"
+            android:layout_centerVertical="true"
+            android:rotation="90"/>
+
+        <mji.tapia.com.okurahotel.widget.PickerView
+            android:id="@+id/picker_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:pv_entries="@array/language_list"
+            app:pv_font="fonts/KozMinPro-Heavy.otf"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="13dp"
+            app:pv_space="40dp"/>
+    </RelativeLayout>
+
+    <mji.tapia.com.okurahotel.widget.InternationalTextView
+        android:id="@+id/ok"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="35dp"
+        android:gravity="center"
+        app:language="en"
+        android:text="@string/language_setting_ok"
+        android:textColor="@color/colorText"
+        android:textSize="40sp"
+        android:textStyle="italic" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="100dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/language_setting_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/okura_language_setting_big"
+            android:transitionName="language_setting_icon"/>
+
+        <mji.tapia.com.okurahotel.widget.InternationalTextView
+            android:id="@+id/language_setting_label"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/home_language_setting_label"
+            android:textColor="@color/colorText"
+            android:textSize="28sp"
+            android:textStyle="italic"
+            android:transitionName="language_setting_label"
+            app:language="jp" />
+
+    </LinearLayout>
+</RelativeLayout>

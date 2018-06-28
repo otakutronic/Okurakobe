@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+
+    <!--
+        <command id="command name">
+        <group> create new group of keyword
+        <parameter id="param name" type="number|name|enum" enum="enum_id"> set the parameter name for the command
+        <group-dependent> create a group where all children must be inside the sentence to be validate
+        <group-param  target="parameter_id" position="before|after"> create a group where the keywords are show the position
+        <keyword type> keyword that must be part of one group
+    -->
+    <command id="open_curtain">
+        <group>
+            <keyword>カーテン</keyword>
+        </group>
+        <group>
+            <keyword>開けて</keyword>
+            <keyword >開いて</keyword>
+        </group>
+    </command>
+
+    <command id="close_curtain">
+        <group>
+            <keyword>カーテン</keyword>
+        </group>
+        <group>
+            <keyword>閉じて</keyword>
+            <keyword >閉めて</keyword>
+        </group>
+    </command>
+
+    <command id="open_lace">
+        <group>
+            <keyword>レース</keyword>
+        </group>
+        <group>
+            <keyword>開けて</keyword>
+            <keyword >開いて</keyword>
+        </group>
+    </command>
+
+    <command id="close_lace">
+        <group>
+            <keyword>レース</keyword>
+        </group>
+        <group>
+            <keyword>閉じて</keyword>
+            <keyword >閉めて</keyword>
+        </group>
+    </command>
+
+
+    <command id="turn_on_entrance">
+        <group>
+            <keyword>入口</keyword>
+            <keyword >入り口</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+        </group>
+    </command>
+
+    <command id="turn_off_entrance">
+        <group>
+            <keyword>入口</keyword>
+            <keyword >入り口</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+        </group>
+    </command>
+
+    <command id="turn_on_room">
+        <group>
+            <keyword>部屋</keyword>
+            <keyword >室内灯</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+        </group>
+    </command>
+
+    <command id="turn_off_room">
+        <group>
+            <keyword>部屋</keyword>
+            <keyword >室内灯</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+        </group>
+    </command>
+
+    <command id="turn_on_indirect">
+        <group>
+            <keyword>ナイトライト</keyword>
+            <keyword>間接照明</keyword>
+            <keyword >室内間接</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+        </group>
+    </command>
+
+    <command id="turn_off_indirect">
+        <group>
+            <keyword>ナイトライト</keyword>
+            <keyword>間接照明</keyword>
+            <keyword >室内間接</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+        </group>
+    </command>
+
+    <!--<command id="turn_on_minibar">-->
+        <!--<group>-->
+            <!--<keyword>ミニバー</keyword>-->
+        <!--</group>-->
+        <!--<group>
+            <keyword>つけて</keyword>
+        </group>-->
+    <!--</command>-->
+
+    <!--<command id="turn_off_minibar">-->
+        <!--<group>-->
+            <!--<keyword>ミニバー</keyword>-->
+        <!--</group>-->
+        <!--<group>
+            <keyword>消して</keyword>
+        </group>-->
+    <!--</command>-->
+
+    <command id="turn_on_washroom">
+        <group>
+            <keyword>洗面所</keyword>
+            <keyword>バスルーム</keyword>
+            <keyword >洗面</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+        </group>
+    </command>
+
+    <command id="turn_off_washroom">
+        <group>
+            <keyword>洗面所</keyword>
+            <keyword>バスルーム</keyword>
+            <keyword >洗面</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+        </group>
+    </command>
+
+    <command id="turn_on_foot">
+        <group>
+            <keyword>フットライト</keyword>
+            <keyword>足元</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+        </group>
+    </command>
+
+    <command id="turn_off_foot">
+        <group>
+            <keyword>フットライト</keyword>
+            <keyword>足元</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+        </group>
+    </command>
+
+    <command id="turn_on_all">
+        <group>
+            <keyword>全部</keyword>
+            <keyword>すべて</keyword>
+            <keyword>全て</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+            <keyword>オン</keyword>
+            <keyword>ＯＮ</keyword>
+        </group>
+    </command>
+
+    <command id="turn_off_all">
+        <group>
+            <keyword>全部</keyword>
+            <keyword>すべて</keyword>
+            <keyword>全て</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+            <keyword>オフ</keyword>
+            <keyword>ＯＦＦ</keyword>
+        </group>
+    </command>
+
+    <command id="turn_air_con_on">
+        <group>
+            <keyword>エアコン</keyword>
+        </group>
+        <group>
+            <keyword>つけて</keyword>
+        </group>
+    </command>
+
+    <command id="turn_air_con_off">
+        <group>
+            <keyword>エアコン</keyword>
+        </group>
+        <group>
+            <keyword>消して</keyword>
+        </group>
+    </command>
+</document>

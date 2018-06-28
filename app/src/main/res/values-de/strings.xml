@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OkuraHotel</string>
+    <string name="home_language_setting_label">Spracheinstellungen</string>
+</resources>

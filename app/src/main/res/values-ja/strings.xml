@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OkuraHotel</string>
+    <string name="curtain">カーテン</string>
+    <string name="curtain_lace">レース</string>
+    <string name="light_minibar">ミニバー</string>
+    <string name="home_alarm_label">アラーム</string>
+    <string name="curtain_back_label">もどる</string>
+    <string name="curtain_curtains_label">カーテン</string>
+    <string name="curtain_lace_label">レース</string>
+    <string name="curtains_title_label">カーテン</string>
+    <string name="dont_understand">はい、ご用件は？</string>
+    <string name="home_alarm_off_label">アラーム オフ</string>
+    <string name="home_do_cleaning_label">清掃してください</string>
+    <string name="home_do_laundry_label">洗濯してください</string>
+    <string name="home_do_not_disturb_label">起こさないでください</string>
+    <string name="home_language_setting_label">言語設定</string>
+    <string name="home_room_manager_label">ルームコントロール</string>
+    <string name="home_sleep_mode_label">スリープモード</string>
+    <string name="home_staff_mode_label">スタッフモード</string>
+    <string name="light_all_off_label">全て\nオフ</string>
+    <string name="light_all_on_label">全て\nオン</string>
+    <string name="light_back_label">もどる</string>
+    <string name="light_entrance_label">入口灯</string>
+    <string name="light_foot_label">足元灯</string>
+    <string name="light_minibar_label">ミニバー</string>
+    <string name="light_night_label">室内灯</string>
+    <string name="light_room_label">室内間接</string>
+    <string name="light_title_label">照明</string>
+    <string name="light_wash_room_label">洗面</string>
+    <string name="room_manager_ac_label">エアコン</string>
+    <string name="room_manager_curtains_label">カーテン</string>
+    <string name="room_manager_exit_label">もどる</string>
+    <string name="room_manager_light_label">照明</string>
+    <string name="room_manager_title_label">ルームコントロール</string>
+    <string name="language_setting_title">Language setting</string>
+    <string name="aircon_fan_speed">Fan Speed</string>
+    <string name="home_alarm_on_label">アラーム： %s</string>
+    <string name="staff_lock_back">戻る</string>
+    <string name="staff_lock_label">ピンコードを入力してください</string>
+    <string name="error_dialog_msg">エラーが発生しました</string>
+</resources>

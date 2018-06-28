@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="HasCurtain">true</bool>
+    <bool name="HasEntranceLight">true</bool>
+    <string-array name="EntranceLight">
+        <item>LT16</item>
+    </string-array>
+    <string-array name="RoomLight">
+        <item>LT17</item>
+        <item>LT18</item>
+    </string-array>
+    <string-array name="RoomIndirectLight">
+        <item>LT6</item>
+        <item>LT23</item>
+    </string-array>
+    <string-array name="MinibarLight">
+        <item>LT17</item>
+        <item>LT18</item>
+    </string-array>
+</resources>

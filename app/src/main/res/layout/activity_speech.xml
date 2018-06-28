@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/speech_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/okura_bg_05">
+
+    <ImageView
+        android:id="@+id/listening_icon"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/okura_listen"
+        android:visibility="invisible" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+    <mji.tapia.com.okurahotel.widget.InternationalTextView
+        android:id="@+id/speech_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listening_icon"
+        android:layout_centerHorizontal="true"
+        android:text="May I help you ?"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:visibility="invisible" />
+
+    <mji.tapia.com.okurahotel.widget.InternationalTextView
+        android:id="@+id/example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Please try: bsjadbsiabdaioshaod"
+        android:textColor="#ffffff"
+        android:textSize="32sp"
+        android:visibility="invisible" />
+</RelativeLayout>

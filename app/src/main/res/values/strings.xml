@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">OkuraHotel</string>
+
+
+    <string name="curtain">Curtains</string>
+    <string name="curtain_lace">Lace</string>
+
+    <string name="light_entrance"></string>
+    <string name="light_interior"></string>
+    <string name="light_indoor_indirect"></string>
+    <string name="light_minibar">Minibar</string>
+    <string name="light_lavatory"></string>
+    <string name="light_foot"></string>
+    <string name="light_all"></string>
+    <string name="home_alarm_label">Alarm</string>
+    <string name="home_room_manager_label">Room manager</string>
+    <string name="home_language_setting_label">Language</string>
+    <string name="home_sleep_mode_label">Sleep mode</string>
+    <string name="home_alarm_off_label">"Alarm off "</string>
+    <string name="home_alarm_on_label">"Alarm: %s"</string>
+    <string name="home_staff_mode_label">Staff mode</string>
+    <string name="home_do_cleaning_label">Please clean my room</string>
+    <string name="home_do_not_disturb_label">Do not disturb</string>
+    <string name="home_do_laundry_label">Please do my laundry</string>
+    <string name="light_minibar_label">Minibar</string>
+    <string name="light_wash_room_label">Wash room</string>
+    <string name="light_foot_label">Foot</string>
+    <string name="light_room_label">Room</string>
+    <string name="light_night_label">Night</string>
+    <string name="light_spot_label">Spot</string>
+    <string name="light_entrance_label">Entrance</string>
+    <string name="light_title_label">Light</string>
+    <string name="light_back_label">Back</string>
+    <string name="light_all_on_label">All on</string>
+    <string name="light_all_off_label">All off</string>
+    <string name="curtain_back_label">Back</string>
+    <string name="curtain_lace_label">Lace</string>
+    <string name="curtain_curtains_label">Curtains</string>
+    <string name="curtains_title_label">Curtains</string>
+    <string name="room_manager_title_label">Room manager</string>
+    <string name="room_manager_ac_label">A/C</string>
+    <string name="room_manager_exit_label">Exit</string>
+    <string name="room_manager_curtains_label">Curtains</string>
+    <string name="room_manager_light_label">Light</string>
+    <string name="language_setting_title">Language setting</string>
+    <string name="language_setting_ok">OK</string>
+    <string name="aircon_fan_speed">Fan Speed</string>
+    <string name="air_con_temperature">Temperature</string>
+    <string name="air_con_room_temperature">Room : %d °C </string>
+    <string name="staff_lock_back">Back</string>
+    <string name="staff_lock_label">Please input pin code</string>
+    <string name="error_dialog_msg">Sorry an error happened</string>
+
+    <item name="error_log" type="id" />
+</resources>

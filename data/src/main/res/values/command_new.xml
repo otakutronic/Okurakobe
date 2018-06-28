@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources name="test" xmlns:tools="http://schemas.android.com/tools">
+
+    <!--Keyword marking
+         - #+/{keyword} : add a new keyword group.
+         - #or/{keyword} : add a variant of the previous keyword
+         - #&/{keyword} : add a new keyword that must be here with the previous keyword group
+         - #or/#&/{keyword} : add a new keyword that must be here with the previous variant of the keyword group
+         - #+/#<type:id/{keyword} : add a new keyword group that will be followed by a command parameter
+         - #+/#type:id>/{keyword} : add a new keyword group that will follow a command parameter
+             - type = int|float|string|enum:array_name
+    -->
+
+    <string-array name="open_curtain" tools:ignore="InconsistentArrays">
+        <item >#+/カーテン</item>
+        <item >#+/開けて</item>
+        <item >#or/開いて</item>
+    </string-array>
+
+    <string-array name="close_curtain" tools:ignore="InconsistentArrays">
+        <item >#+/カーテン</item>
+        <item >#+/閉じて</item>
+        <item >#or/閉めて</item>
+    </string-array>
+
+    <string-array name="open_lace" tools:ignore="InconsistentArrays">
+        <item >#+/レース</item>
+        <item>#+/開けて</item>
+        <item>#or/開いて</item>
+    </string-array>
+
+    <string-array name="close_lace" tools:ignore="InconsistentArrays">
+        <item >#+/レース</item>
+        <item >#+/閉じて</item>
+        <item >#or/閉めて</item>
+    </string-array>
+
+    <string-array name="turn_on_entrance" tools:ignore="InconsistentArrays">
+        <item>#+/入口</item>
+        <item>#or/入り口</item>
+        <item>#+/つけて</item>
+    </string-array>
+
+    <string-array name="turn_off_entrance" tools:ignore="InconsistentArrays">
+        <item>#+/入口</item>
+        <item>#or/入り口</item>
+        <item>#+/消して</item>
+    </string-array>
+
+    <string-array name="turn_on_room" tools:ignore="InconsistentArrays">
+        <item>#+/部屋</item>
+        <item>#or/室内灯</item>
+        <item>#+/つけて</item>
+    </string-array>
+
+    <string-array name="turn_off_room" tools:ignore="InconsistentArrays">
+        <item >#+/部屋</item>
+        <item >#or/室内灯</item>
+        <item >#+/消して</item>
+    </string-array>
+
+    <string-array name="turn_on_indirect" tools:ignore="InconsistentArrays">
+        <item>#+/ナイトライト</item>
+        <item>#or/間接照明</item>
+        <item>#or/室内間接</item>
+        <item>#+/つけて</item>
+    </string-array>
+
+    <string-array name="turn_off_indirect" tools:ignore="InconsistentArrays">
+        <item >#+/ナイトライト</item>
+        <item >#or/間接照明</item>
+        <item >#or/室内間接</item>
+        <item >#+/消して</item>
+    </string-array>
+
+
+    <string-array name="turn_on_minibar" tools:ignore="InconsistentArrays">
+        <item >#+/ミニバー</item>
+        <item >#+/つけて</item>
+    </string-array>
+
+    <string-array name="turn_off_minibar" tools:ignore="InconsistentArrays">
+        <item >#+/ナイトライト</item>
+        <item >#+/消して</item>
+    </string-array>
+
+
+    <string-array name="turn_on_washroom" tools:ignore="InconsistentArrays">
+        <item >#+/洗面所</item>
+        <item >#or/バスルーム</item>
+        <item >#or/洗面</item>
+        <item >#+/つけて</item>
+    </string-array>
+
+    <string-array name="turn_off_washroom" tools:ignore="InconsistentArrays">
+        <item >#+/洗面所</item>
+        <item >#or/バスルーム</item>
+        <item >#or/洗面</item>
+        <item >#+/消して</item>
+    </string-array>
+
+
+    <string-array name="turn_on_foot" tools:ignore="InconsistentArrays">
+        <item >#+/フットライト</item>
+        <item >#or/足元</item>
+        <item >#+/つけて</item>
+    </string-array>
+
+    <string-array name="turn_off_foot" tools:ignore="InconsistentArrays">
+        <item >#+/フットライト</item>
+        <item >#or/足元</item>
+        <item >#+/消して</item>
+    </string-array>
+
+    <string-array name="turn_on_all" tools:ignore="InconsistentArrays">
+        <item >#+/全部</item>
+        <item >#or/すべて</item>
+        <item >#or/全て</item>
+        <item >#+/つけて</item>
+        <item >#or/オン</item>
+        <item >#or/ＯＮ</item>
+    </string-array>
+
+    <string-array name="turn_off_all" tools:ignore="InconsistentArrays">
+        <item >#+/全部</item>
+        <item >#or/すべて</item>
+        <item >#or/全て</item>
+        <item >#+/消して</item>
+        <item >#or/オフ</item>
+        <item >#or/ＯＦＦ</item>
+    </string-array>
+
+    <array name="command_speech_activity">
+        <item>@array/open_curtain</item>
+        <item>@array/close_curtain</item>
+        <item>@array/open_lace</item>
+        <item>@array/close_lace</item>
+        <item>@array/turn_on_entrance</item>
+        <item>@array/turn_off_entrance</item>
+        <item>@array/turn_on_room</item>
+        <item>@array/turn_off_room</item>
+        <item>@array/turn_on_indirect</item>
+        <item>@array/turn_on_minibar</item>
+        <item>@array/turn_off_minibar</item>
+        <item>@array/turn_on_washroom</item>
+        <item>@array/turn_off_washroom</item>
+        <item>@array/turn_on_foot</item>
+        <item>@array/turn_off_foot</item>
+        <item>@array/turn_on_all</item>
+        <item>@array/turn_off_all</item>
+    </array>
+</resources>

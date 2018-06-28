@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="fan_speed_list">
+        <item>停止</item>
+        <item>弱</item>
+        <item>中</item>
+        <item>強</item>
+        <item>自動</item>
+    </string-array>
+</resources>

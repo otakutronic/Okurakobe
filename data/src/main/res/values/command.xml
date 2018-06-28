@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<string-array name="open_curtain0">-->
+        <!--<item >カーテン</item>-->
+        <!--<item >開けて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="open_curtain1">-->
+        <!--<item >カーテン</item>-->
+        <!--<item >開いて</item>-->
+    <!--</string-array>-->
+    <!--<array name="open_curtain">-->
+        <!--<item>@array/open_curtain0</item>-->
+        <!--<item>@array/open_curtain1</item>-->
+    <!--</array>-->
+
+
+    <!--<string-array name="close_curtain0">-->
+        <!--<item >カーテン</item>-->
+        <!--<item >閉じて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="close_curtain1">-->
+        <!--<item >カーテン</item>-->
+        <!--<item >閉めて</item>-->
+    <!--</string-array>-->
+    <!--<array name="close_curtain">-->
+        <!--<item>@array/close_curtain0</item>-->
+        <!--<item>@array/close_curtain1</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="open_lace0">-->
+        <!--<item >レース</item>-->
+        <!--<item >開けて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="open_lace1">-->
+        <!--<item >レース</item>-->
+        <!--<item >開いて</item>-->
+    <!--</string-array>-->
+    <!--<array name="open_lace">-->
+        <!--<item>@array/open_lace0</item>-->
+        <!--<item>@array/open_lace1</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="close_lace0">-->
+        <!--<item >レース</item>-->
+        <!--<item >閉じて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="close_lace1">-->
+        <!--<item >レース</item>-->
+        <!--<item >閉めて</item>-->
+    <!--</string-array>-->
+    <!--<array name="close_lace">-->
+        <!--<item>@array/close_lace0</item>-->
+        <!--<item>@array/close_lace1</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_on_entrance0">-->
+        <!--<item >入口</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance1">-->
+        <!--<item >入口</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance2">-->
+        <!--<item >入り口</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance3">-->
+        <!--<item >入り口</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance4">-->
+        <!--<item >入口</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance5">-->
+        <!--<item >入り口</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance6">-->
+        <!--<item >入口</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_entrance7">-->
+        <!--<item >入り口</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_on_entrance">-->
+        <!--<item>@array/turn_on_entrance0</item>-->
+        <!--<item>@array/turn_on_entrance1</item>-->
+        <!--<item>@array/turn_on_entrance2</item>-->
+        <!--<item>@array/turn_on_entrance3</item>-->
+        <!--<item>@array/turn_on_entrance4</item>-->
+        <!--<item>@array/turn_on_entrance5</item>-->
+        <!--<item>@array/turn_on_entrance6</item>-->
+        <!--<item>@array/turn_on_entrance7</item>-->
+    <!--</array>-->
+
+
+
+    <!--<string-array name="turn_off_entrance0">-->
+        <!--<item >入口</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance1">-->
+        <!--<item >入口</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance2">-->
+        <!--<item >入り口</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance3">-->
+        <!--<item >入り口</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance4">-->
+        <!--<item >入り口</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance5">-->
+        <!--<item >入口</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance6">-->
+        <!--<item >入り口</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_entrance7">-->
+        <!--<item >入口</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_entrance">-->
+        <!--<item>@array/turn_off_entrance0</item>-->
+        <!--<item>@array/turn_off_entrance1</item>-->
+        <!--<item>@array/turn_off_entrance2</item>-->
+        <!--<item>@array/turn_off_entrance4</item>-->
+        <!--<item>@array/turn_off_entrance5</item>-->
+        <!--<item>@array/turn_off_entrance6</item>-->
+        <!--<item>@array/turn_off_entrance7</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_on_room0">-->
+        <!--<item >部屋</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room1">-->
+        <!--<item >部屋</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room2">-->
+        <!--<item >部屋</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room3">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room4">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room5">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room6">-->
+        <!--<item >部屋</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_room7">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_on_room">-->
+        <!--<item>@array/turn_on_room0</item>-->
+        <!--<item>@array/turn_on_room1</item>-->
+        <!--<item>@array/turn_on_room2</item>-->
+        <!--<item>@array/turn_on_room3</item>-->
+        <!--<item>@array/turn_on_room4</item>-->
+        <!--<item>@array/turn_on_room5</item>-->
+        <!--<item>@array/turn_on_room6</item>-->
+        <!--<item>@array/turn_on_room7</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_off_room0">-->
+        <!--<item >部屋</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_room1">-->
+        <!--<item >部屋</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_room2">-->
+        <!--<item >部屋</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_room3">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_room4">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_room5">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_room6">-->
+        <!--<item >部屋</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+
+    <!--<string-array name="turn_off_room7">-->
+        <!--<item >室内灯</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_room">-->
+        <!--<item>@array/turn_off_room0</item>-->
+        <!--<item>@array/turn_off_room1</item>-->
+        <!--<item>@array/turn_off_room2</item>-->
+        <!--<item>@array/turn_off_room3</item>-->
+        <!--<item>@array/turn_off_room4</item>-->
+        <!--<item>@array/turn_off_room5</item>-->
+        <!--<item>@array/turn_off_room6</item>-->
+        <!--<item>@array/turn_off_room7</item>-->
+    <!--</array>-->
+
+
+    <!--<string-array name="turn_on_indirect0">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect1">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect2">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect3">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect4">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect5">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect6">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect7">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect8">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect9">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect10">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect11">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect12">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect13">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_indirect14">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_on_indirect">-->
+        <!--<item>@array/turn_on_indirect0</item>-->
+        <!--<item>@array/turn_on_indirect1</item>-->
+        <!--<item>@array/turn_on_indirect2</item>-->
+        <!--<item>@array/turn_on_indirect3</item>-->
+        <!--<item>@array/turn_on_indirect4</item>-->
+        <!--<item>@array/turn_on_indirect5</item>-->
+        <!--<item>@array/turn_on_indirect6</item>-->
+        <!--<item>@array/turn_on_indirect7</item>-->
+        <!--<item>@array/turn_on_indirect8</item>-->
+        <!--<item>@array/turn_on_indirect9</item>-->
+        <!--<item>@array/turn_on_indirect10</item>-->
+        <!--<item>@array/turn_on_indirect11</item>-->
+        <!--<item>@array/turn_on_indirect12</item>-->
+        <!--<item>@array/turn_on_indirect13</item>-->
+        <!--<item>@array/turn_on_indirect14</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_off_indirect0">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect1">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect2">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect3">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect4">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect5">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect6">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect7">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect8">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect9">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect10">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect11">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect12">-->
+        <!--<item >ナイトライト</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect13">-->
+        <!--<item >間接照明</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_indirect14">-->
+        <!--<item >室内間接</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_indirect">-->
+        <!--<item>@array/turn_off_indirect0</item>-->
+        <!--<item>@array/turn_off_indirect1</item>-->
+        <!--<item>@array/turn_off_indirect2</item>-->
+        <!--<item>@array/turn_off_indirect3</item>-->
+        <!--<item>@array/turn_off_indirect4</item>-->
+        <!--<item>@array/turn_off_indirect5</item>-->
+        <!--<item>@array/turn_off_indirect6</item>-->
+        <!--<item>@array/turn_off_indirect7</item>-->
+        <!--<item>@array/turn_off_indirect8</item>-->
+        <!--<item>@array/turn_off_indirect9</item>-->
+        <!--<item>@array/turn_off_indirect10</item>-->
+        <!--<item>@array/turn_off_indirect11</item>-->
+        <!--<item>@array/turn_off_indirect12</item>-->
+        <!--<item>@array/turn_off_indirect13</item>-->
+        <!--<item>@array/turn_off_indirect14</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_on_minibar0">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_minibar1">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_minibar2">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_minibar3">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_on_minibar">-->
+        <!--<item>@array/turn_on_minibar0</item>-->
+        <!--<item>@array/turn_on_minibar1</item>-->
+        <!--<item>@array/turn_on_minibar2</item>-->
+        <!--<item>@array/turn_on_minibar3</item>-->
+    <!--</array>-->
+
+
+    <!--<string-array name="turn_off_minibar0">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_minibar1">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_minibar2">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+
+    <!--<string-array name="turn_off_minibar3">-->
+        <!--<item >ミニバー</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_minibar">-->
+        <!--<item>@array/turn_off_minibar0</item>-->
+        <!--<item>@array/turn_off_minibar1</item>-->
+        <!--<item>@array/turn_off_minibar2</item>-->
+        <!--<item>@array/turn_off_minibar3</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_on_washroom0">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom1">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom2">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom3">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom4">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom5">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom6">-->
+        <!--<item >洗面</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom7">-->
+        <!--<item >洗面</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom8">-->
+        <!--<item >洗面</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom9">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom10">-->
+        <!--<item >洗面</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom11">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_washroom">-->
+        <!--<item>@array/turn_on_washroom0</item>-->
+        <!--<item>@array/turn_on_washroom1</item>-->
+        <!--<item>@array/turn_on_washroom2</item>-->
+        <!--<item>@array/turn_on_washroom3</item>-->
+        <!--<item>@array/turn_on_washroom4</item>-->
+        <!--<item>@array/turn_on_washroom5</item>-->
+        <!--<item>@array/turn_on_washroom6</item>-->
+        <!--<item>@array/turn_on_washroom7</item>-->
+        <!--<item>@array/turn_on_washroom8</item>-->
+        <!--<item>@array/turn_on_washroom9</item>-->
+        <!--<item>@array/turn_on_washroom10</item>-->
+        <!--<item>@array/turn_on_washroom11</item>-->
+    <!--</string-array>-->
+
+    <!--<string-array name="turn_off_washroom0">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom1">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom2">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom3">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom4">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom5">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom6">-->
+        <!--<item >洗面</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom7">-->
+        <!--<item >洗面</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom8">-->
+        <!--<item >洗面</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom9">-->
+        <!--<item >洗面所</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom10">-->
+        <!--<item >洗面</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_washroom11">-->
+        <!--<item >バスルーム</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_washroom">-->
+        <!--<item>@array/turn_off_washroom0</item>-->
+        <!--<item>@array/turn_off_washroom1</item>-->
+        <!--<item>@array/turn_off_washroom2</item>-->
+        <!--<item>@array/turn_off_washroom3</item>-->
+        <!--<item>@array/turn_off_washroom4</item>-->
+        <!--<item>@array/turn_off_washroom5</item>-->
+        <!--<item>@array/turn_off_washroom6</item>-->
+        <!--<item>@array/turn_off_washroom7</item>-->
+        <!--<item>@array/turn_off_washroom8</item>-->
+        <!--<item>@array/turn_off_washroom9</item>-->
+        <!--<item>@array/turn_off_washroom10</item>-->
+        <!--<item>@array/turn_off_washroom11</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_on_foot0">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot1">-->
+        <!--<item >足元</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot2">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot3">-->
+        <!--<item >足元</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot4">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot5">-->
+        <!--<item >足元</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot6">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_foot7">-->
+        <!--<item >足元</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_on_foot">-->
+        <!--<item>@array/turn_on_foot0</item>-->
+        <!--<item>@array/turn_on_foot1</item>-->
+        <!--<item>@array/turn_on_foot2</item>-->
+        <!--<item>@array/turn_on_foot3</item>-->
+        <!--<item>@array/turn_on_foot4</item>-->
+        <!--<item>@array/turn_on_foot5</item>-->
+        <!--<item>@array/turn_on_foot6</item>-->
+        <!--<item>@array/turn_on_foot7</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_off_foot0">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot1">-->
+        <!--<item >足元</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot2">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot3">-->
+        <!--<item >足元</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot4">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot5">-->
+        <!--<item >足元</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot6">-->
+        <!--<item >フットライト</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_foot7">-->
+        <!--<item >足元</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_foot">-->
+        <!--<item>@array/turn_off_foot0</item>-->
+        <!--<item>@array/turn_off_foot1</item>-->
+        <!--<item>@array/turn_off_foot2</item>-->
+        <!--<item>@array/turn_off_foot3</item>-->
+        <!--<item>@array/turn_off_foot4</item>-->
+        <!--<item>@array/turn_off_foot5</item>-->
+        <!--<item>@array/turn_off_foot6</item>-->
+        <!--<item>@array/turn_off_foot7</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_on_all0">-->
+        <!--<item >全部</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all1">-->
+        <!--<item >全部</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all2">-->
+        <!--<item >全部</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all3">-->
+        <!--<item >すべて</item>-->
+        <!--<item >オン</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all4">-->
+        <!--<item >全て</item>-->
+        <!--<item >オン</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all5">-->
+        <!--<item >すべて</item>-->
+        <!--<item >ＯＮ</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all6">-->
+        <!--<item >全て</item>-->
+        <!--<item >ＯＮ</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_on_all7">-->
+        <!--<item >全部</item>-->
+        <!--<item >つけて</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_on_all">-->
+        <!--<item>@array/turn_on_all0</item>-->
+        <!--<item>@array/turn_on_all1</item>-->
+        <!--<item>@array/turn_on_all2</item>-->
+        <!--<item>@array/turn_on_all3</item>-->
+        <!--<item>@array/turn_on_all4</item>-->
+        <!--<item>@array/turn_on_all5</item>-->
+        <!--<item>@array/turn_on_all6</item>-->
+        <!--<item>@array/turn_on_all7</item>-->
+    <!--</array>-->
+
+    <!--<string-array name="turn_off_all0">-->
+        <!--<item >全部</item>-->
+        <!--<item >電気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all1">-->
+        <!--<item >全部</item>-->
+        <!--<item >明かり</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all2">-->
+        <!--<item >全部</item>-->
+        <!--<item >天気</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all3">-->
+        <!--<item >全て</item>-->
+        <!--<item >オフ</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all4">-->
+        <!--<item >すべて</item>-->
+        <!--<item >オフ</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all5">-->
+        <!--<item >全て</item>-->
+        <!--<item >ＯＦＦ</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all6">-->
+        <!--<item >すべて</item>-->
+        <!--<item >ＯＦＦ</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="turn_off_all7">-->
+        <!--<item >全部</item>-->
+        <!--<item >消して</item>-->
+    <!--</string-array>-->
+    <!--<array name="turn_off_all">-->
+        <!--<item>@array/turn_off_all0</item>-->
+        <!--<item>@array/turn_off_all1</item>-->
+        <!--<item>@array/turn_off_all2</item>-->
+        <!--<item>@array/turn_off_all3</item>-->
+        <!--<item>@array/turn_off_all4</item>-->
+        <!--<item>@array/turn_off_all5</item>-->
+        <!--<item>@array/turn_off_all6</item>-->
+        <!--<item>@array/turn_off_all7</item>-->
+    <!--</array>-->
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="curtain_opened">カーテンをあけます。</string>
+    <string name="curtain_closed">カーテンを閉めます。</string>
+
+    <string name="lace_opened">レースをあけます。</string>
+    <string name="lace_closed">レースを閉めます。</string>
+
+    <string name="light_turned_on">電気をつけました。</string>
+    <string name="light_turned_off">電気を消しました。</string>
+
+    <string name="start_discussion">お呼びでしょうか？</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_list">
+        <item>English</item>
+        <item>日本語</item>
+        <item>简体中文</item>
+        <item>繁体中文</item>
+        <item>한글</item>
+        <item>Français</item>
+    </string-array>
+</resources>
