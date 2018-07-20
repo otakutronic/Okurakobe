@@ -30,7 +30,6 @@
         <activity android:name=".ui.room_manager.curtain.CurtainActivity" android:screenOrientation="landscape"/>
         <activity android:name=".ui.room_manager.air_con.AirConActivity" android:screenOrientation="landscape"/>
         <activity android:name=".ui.room_manager.light.LightActivity" android:screenOrientation="landscape"/>
-        <activity android:name=".ui.room_manager.light.LightSettingActivity" android:screenOrientation="landscape"/>
         <activity android:name=".ui.sleep.SleepActivity" android:screenOrientation="landscape"/>
         <activity android:name=".ui.language_setting.LanguageSettingActivity" android:screenOrientation="landscape" android:configChanges="locale"/>
         <activity android:name=".ui.speech.SpeechActivity" android:screenOrientation="landscape"/>

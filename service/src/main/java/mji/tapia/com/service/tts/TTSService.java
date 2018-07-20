@@ -20,5 +20,6 @@ public interface TTSService {
 
     Observable<TTSState> ttsStateChange();
 
+    Completable init();
 
 }

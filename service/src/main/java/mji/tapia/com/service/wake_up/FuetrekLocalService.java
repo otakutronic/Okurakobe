@@ -242,6 +242,8 @@ public class FuetrekLocalService implements WakeUpService,FSRServiceEventListene
                         resultList.add(info.getText());
                     }
 
+                    Log.e("Fuetrek", result);
+
                     if(result.equals("(no result)")){
                         if(!isStopped)
                             listen();
@@ -249,7 +251,8 @@ public class FuetrekLocalService implements WakeUpService,FSRServiceEventListene
                     }
                     else {
                         for (String res: resultList) {
-                            if(res.contains("タピア")){
+                            if(res.contains("はいオルタン")){
+                                Log.e("Fuetrek", "オルタン detected............. ");
                                 wakeWordDetectedPublishSubject.onNext(res);
                                 break;
                             }

@@ -1,5 +1,7 @@
 package mji.tapia.com.service.iot.air_con;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 import io.reactivex.Completable;
@@ -16,9 +18,9 @@ import mji.tapia.com.service.iot.IoTService;
 public class IoTAirConManagerImpl implements IoTAirConManager {
 
     private static final int SWITCH_OFF = 0;
-    private static final int SWITCH_ON = 1;
+    private static final int SWITCH_ON = 3;
 
-    private static final String COMMAND_AC_SWITCH = "LT18";
+    private static final String COMMAND_AC_SWITCH = "A1VL";
 
     private IoTService.CommandEditor commandEditor;
 

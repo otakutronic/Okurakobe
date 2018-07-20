@@ -1,27 +1,17 @@
 package mji.tapia.com.okurahotel.ui.staff_mode;
 
 import android.Manifest;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatEditText;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Toast;
-import java.util.List;
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +20,7 @@ import mji.tapia.com.okurahotel.BaseActivity;
 import mji.tapia.com.okurahotel.R;
 import mji.tapia.com.okurahotel.ScopedPresenter;
 import mji.tapia.com.okurahotel.dagger.activity.ActivityComponent;
-import mji.tapia.com.service.iot.bluetooth.BluetoothDiscoveryService;
+import mji.tapia.com.okurahotel.ui.splash.SplashActivity;
 
 /**
  * Created by andy on 9/21/2017.
@@ -79,25 +69,25 @@ public class StaffModeActivity extends BaseActivity implements StaffModeContract
     }
 
     private void onBackButtonSelected() {
+        saveSettings();
+        presenter.back();
+    }
+
+    private void saveSettings() {
         final String roomID = String.valueOf(room_id_txt.getText());
         presenter.onRoomNumberUpdate(roomID);
         final int volume = volume_bar.getProgress();
         presenter.onVolumeUpdate(volume);
-        presenter.back();
     }
 
     private void onBluetoothButtonSelect() {
+        saveSettings();
         setPermissions();
 
         final String roomID = String.valueOf(room_id_txt.getText());
-        final boolean isConnected = presenter.isDeviceConnected(roomID);
-        final BluetoothDiscoveryService.IOTDevice iotDevice = presenter.getIOTDevice();
+        presenter.onBluetoothSelect(roomID);
 
-        if(isConnected){
-            Toast.makeText(this, "Already connected with device: " + iotDevice.id.toString(), Toast.LENGTH_LONG).show();
-        } else {
-            presenter.onBluetoothSelect(roomID);
-        }
+        back_btn.setEnabled(false);
     }
 
     private void setPermissions() {
@@ -130,18 +120,13 @@ public class StaffModeActivity extends BaseActivity implements StaffModeContract
     }
 
     @Override
-    public void setBluetoothPairRequest() {
-
-    }
-
-    @Override
     public void setBluetoothDiscovery(Boolean isDiscovering) {
-        final String deviceName = presenter.getIOTDevice().id;
         if(isDiscovering) {
-           if(bondingProgressDialog == null) {
-               bondingProgressDialog = ProgressDialog.show(this, "", "Pairing with device " + deviceName,
-                       true, false);
-           }
+            if(bondingProgressDialog == null) {
+                final String deviceName = presenter.getIOTDevice().id;
+                bondingProgressDialog = ProgressDialog.show(this, "", "Pairing with device " + deviceName,
+                        true, false);
+            }
         } else {
             if(bondingProgressDialog != null) {
                 bondingProgressDialog.dismiss();
@@ -152,8 +137,24 @@ public class StaffModeActivity extends BaseActivity implements StaffModeContract
 
     @Override
     public void setBluetoothConnected() {
-        final BluetoothDiscoveryService.IOTDevice iotDevice = presenter.getIOTDevice();
-        Toast.makeText(this, "Connected to: " + iotDevice.id.toString(), Toast.LENGTH_LONG).show();
+        restartProcess(true);
+    }
+
+    @Override
+    public void setBluetoothPairRequest() {
+        back_btn.setEnabled(true);
+    }
+
+    private boolean restartProcess(boolean restartProcess) {
+        Intent i = new Intent(this, SplashActivity.class);
+        startActivity(i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+
+        if (restartProcess) {
+            System.exit(0);
+        } else {
+            Toast.makeText(this, "Activity restarted", Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 }
 

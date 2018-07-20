@@ -15,7 +15,7 @@ import mji.tapia.com.service.iot.IoTService;
 
 public class IoTCurtainManagerImpl implements IoTCurtainManager {
 
-    static final private String COMMAND_CURTAIN = "LT6";
+    static final private String COMMAND_CURTAIN = "DL1";
 
     private IoTService.CommandEditor commandEditor;
 

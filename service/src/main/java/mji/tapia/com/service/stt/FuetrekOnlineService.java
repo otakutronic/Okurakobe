@@ -30,12 +30,14 @@ import com.fuetrek.fsr.exception.FSRServiceException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.subjects.BehaviorSubject;
 import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.SingleSubject;
+import mji.tapia.com.service.language.LanguageManager;
 import mji.tapia.com.service.wake_up.FuetrekLocalService;
 
 import static com.fuetrek.fsr.FSRServiceEnum.EventType.NotifyAutoStart;
@@ -114,6 +116,11 @@ public class FuetrekOnlineService implements STTService, FSRServiceEventListener
         } else {
             requestlistening = true;
         }
+    }
+
+    @Override
+    public void listen(LanguageManager.Language language) {
+
     }
 
     @Override

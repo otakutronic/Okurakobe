@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Locale;
 import javax.inject.Inject;
@@ -13,8 +12,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import io.reactivex.Completable;
-import io.reactivex.disposables.Disposable;
 import mji.tapia.com.okurahotel.BaseActivity;
 import mji.tapia.com.okurahotel.R;
 import mji.tapia.com.okurahotel.ScopedPresenter;
@@ -31,14 +28,14 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
 
     private Unbinder unbinder;
 
-    @BindView(R.id.clean_room)
+   /* @BindView(R.id.clean_room)
     TextView cleanRoom_tv;
 
     @BindView(R.id.not_disturb)
     TextView notDisturb_tv;
 
     @BindView(R.id.do_laundry)
-    TextView doLaundry_tv;
+    TextView doLaundry_tv;*/
 
     @OnClick(R.id.alarm_button)
     void onAlarmClick(){
@@ -55,18 +52,13 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
         presenter.selectSleepMode();
     };
 
-    @OnClick(R.id.language_setting_button)
+    @OnClick(R.id.settings_button)
     void onLanguageSettingClick(){
-        presenter.selectLanguageSetting();
+        presenter.selectStaffMode();
     };
 
     @BindView(R.id.home_screen)
     View homeScreen;
-
-    @OnClick(R.id.staff_mode)
-    void onStaffModeClick() {
-        presenter.selectStaffMode();
-    }
 
     @OnClick(R.id.alarm_state)
     void onAlarmStateClick() {
@@ -79,9 +71,9 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
         setContentView(R.layout.activity_home);
         unbinder = ButterKnife.bind(this);
 
-        cleanRoom_tv.setOnClickListener(v -> presenter.toggleCleanRoom());
-        doLaundry_tv.setOnClickListener(v -> presenter.toggleDoLaundry());
-        notDisturb_tv.setOnClickListener(v -> presenter.toggleDoNotDisturb());
+        //cleanRoom_tv.setOnClickListener(v -> presenter.toggleCleanRoom());
+        //doLaundry_tv.setOnClickListener(v -> presenter.toggleDoLaundry());
+        //notDisturb_tv.setOnClickListener(v -> presenter.toggleDoNotDisturb());
 
         homeScreen.setOnTouchListener((v, event) -> {
             if (event.getAction() == MotionEvent.ACTION_DOWN){
@@ -112,11 +104,11 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
     public void setCleanRoomTextEnable(boolean isEnabled) {
         runOnUiThread(() -> {
             if(isEnabled) {
-                cleanRoom_tv.setTextColor(getResources().getColor(R.color.colorText));
-                notDisturb_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
+                //cleanRoom_tv.setTextColor(getResources().getColor(R.color.colorText));
+                //notDisturb_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
             }
             else {
-                cleanRoom_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
+                //cleanRoom_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
             }
         });
 
@@ -126,11 +118,11 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
     public void setDoNotDisturbTextEnable(boolean isEnabled) {
         runOnUiThread(() -> {
             if(isEnabled) {
-                notDisturb_tv.setTextColor(getResources().getColor(R.color.colorText));
-                cleanRoom_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
+                //notDisturb_tv.setTextColor(getResources().getColor(R.color.colorText));
+                //cleanRoom_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
             }
             else {
-                notDisturb_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
+                //notDisturb_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
             }
         });
     }
@@ -139,10 +131,10 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
     public void setDoLaundryTextEnable(boolean isEnabled) {
         runOnUiThread(() -> {
             if(isEnabled) {
-                doLaundry_tv.setTextColor(getResources().getColor(R.color.colorText));
+                //doLaundry_tv.setTextColor(getResources().getColor(R.color.colorText));
             }
             else {
-                doLaundry_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
+                //doLaundry_tv.setTextColor(getResources().getColor(R.color.colorDisabledText));
             }
         });
 

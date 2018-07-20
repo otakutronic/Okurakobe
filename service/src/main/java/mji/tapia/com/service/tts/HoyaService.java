@@ -4,17 +4,19 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.os.Environment;
 import android.util.Log;
 
+import java.io.File;
 import java.lang.reflect.Method;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.BehaviorSubject;
 import io.reactivex.subjects.CompletableSubject;
 import kr.co.voiceware.HIKARI;
 import mji.tapia.com.service.R;
+import mji.tapia.com.service.util.AssetUtils;
 
 /**
  * Created by Sami on 9/26/2017.
@@ -31,12 +33,29 @@ public class HoyaService implements TTSService {
 
     private CompletableSubject completableSubject;
 
+    private static CompletableSubject initCompletableSubject = CompletableSubject.create();
+
     public HoyaService(Context context){
 
         this.context = context;
-        loadDB();
+
         player = new MediaPlayer();
         setState(TTSState.IDLE);
+    }
+
+    @Override
+    public Completable init() {
+        if (initCompletableSubject.hasThrowable()){
+            initCompletableSubject = CompletableSubject.create();
+        }
+        if (!initCompletableSubject.hasComplete()){
+            Schedulers.io().scheduleDirect(() -> {
+                syncDBFiles(initCompletableSubject);
+                loadDB();
+                initCompletableSubject.onComplete();
+            });
+        }
+        return initCompletableSubject;
     }
 
     @Override
@@ -51,6 +70,18 @@ public class HoyaService implements TTSService {
         return null;
     }
 
+    private void syncDBFiles(CompletableSubject completableSubject) {
+        //check if database voice are here for Hoya
+        File hoyaDir = new File(context.getFilesDir().getPath() + "/hoya");
+        if (!hoyaDir.exists()) {
+            if(!hoyaDir.mkdir())
+                return;
+        }
+        File japaneseDb = new File(context.getFilesDir().getPath() + "/hoya/tts_single_db_hikari.vtdb");
+        if(!japaneseDb.exists()) {
+            AssetUtils.copyAssetFile(context, "hoya/tts_single_db_hikari.vtdb", context.getFilesDir().getPath() );
+        }
+    }
 
     private int sayIn(String speech){
         int pitch;
@@ -170,7 +201,7 @@ public class HoyaService implements TTSService {
             String db_path1 = "/system/vendor/micro_h16";
 
 
-            db_path = "/sdcard/micro_h16/";
+            db_path = context.getFilesDir().getPath() + "/hoya";
             engine_version_jp = HIKARI.GetVersion();
             load_rtn_jp = HIKARI.LOADTTS(db_path, license_jp);
 

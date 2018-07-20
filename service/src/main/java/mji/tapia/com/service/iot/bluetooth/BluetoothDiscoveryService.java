@@ -17,9 +17,10 @@ public interface BluetoothDiscoveryService {
         public String id;
         public String address;
         public String pin;
+        public BluetoothDevice hub;
     }
 
-    void startDiscovery();
+    void startDiscovery(boolean isNewID);
 
     void stopDiscovery();
 
@@ -41,6 +42,8 @@ public interface BluetoothDiscoveryService {
 
     void turnOnBluetoothAndScheduleDiscovery();
 
+    void reset();
+
     boolean isAlreadyPaired(BluetoothDevice device);
 
     Observable<BluetoothDevice> bluetoothDevice();
@@ -50,6 +53,8 @@ public interface BluetoothDiscoveryService {
     Observable<Boolean> bluetoothDiscovery();
 
     Observable<Boolean> bluetoothConnect();
+
+    Observable<Boolean> devicePairingComplete();
 
     IOTDevice getIOTDevice();
 
@@ -71,7 +76,9 @@ public interface BluetoothDiscoveryService {
 
     void onBluetoothTurningOn();
 
-    void onDevicePairingEnded();
+    void onDeviceBondStateChanged();
 
     boolean isDevicePaired(IOTDevice iotDevice);
+
+    void setBluetoothPairingPin(BluetoothDevice device);
 }

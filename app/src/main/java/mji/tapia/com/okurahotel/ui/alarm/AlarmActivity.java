@@ -3,9 +3,7 @@ package mji.tapia.com.okurahotel.ui.alarm;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;

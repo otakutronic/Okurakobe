@@ -62,6 +62,7 @@ public class LocalDataSource {
         iOTDevice.id = BluetoothDiscoveryServiceImpl.IOT_DEVICE_ID + "0101";
         iOTDevice.pin = BluetoothDiscoveryServiceImpl.IOT_DEVICE_PIN + "0101";
         iOTDevice.address = BluetoothDiscoveryServiceImpl.IOT_DEVICE_ADDRESS;
+        iOTDevice.hub = null;
         return iOTDevice;
     }
 }

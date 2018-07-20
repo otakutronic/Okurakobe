@@ -26,13 +26,11 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
 
     static public final String IOT_DEVICE_ID = "Room_";
 
-    static public final String IOT_DEVICE_PIN = "160062";
+    static public final String IOT_DEVICE_PIN = "180025";
 
-    static public final String IOT_DEVICE_ADDRESS = "00:1B:DC:06:C1:D0";
+    static public final String IOT_DEVICE_ADDRESS = "0";
 
     private BluetoothAdapter mBtAdapter;
-
-    private PublishSubject<BluetoothDevice> bluetoothDevicePublishSubject = PublishSubject.create();
 
     private BluetoothDevice boundingDevice;
 
@@ -50,7 +48,11 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
 
     private BehaviorSubject<BluetoothDevice> bluetoothDevice = BehaviorSubject.create();
 
+    private BehaviorSubject<Boolean> devicePairingEnded = BehaviorSubject.create();
+
     private LocalDataSource localDataSource;
+
+    private boolean isNewID;
 
     public BluetoothDiscoveryServiceImpl(Context context, PreferenceUtils sharedPreferenceManager, BluetoothAdapter btAdapter){
         this.context = context;
@@ -79,28 +81,6 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
             }
         }
     }
-
-    /*public void setBluetoothPairingPin(BluetoothDevice device)
-    {
-        byte[] pinBytes = convertPinToBytes("0000");
-        try {
-            Log.d(TAG, "Try to set the PIN");
-            Method m = device.getClass().getMethod("setPin", byte[].class);
-            m.invoke(device, pinBytes);
-            Log.d(TAG, "Success to add the PIN.");
-            try {
-                device.getClass().getMethod("setPairingConfirmation", boolean.class).invoke(device, true);
-                Log.d(TAG, "Success to setPairingConfirmation.");
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                Log.e(TAG, e.getMessage());
-                e.printStackTrace();
-            }
-        } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
-            e.printStackTrace();
-        }
-    }*/
 
     @Override
     public boolean isDevicePaired(IOTDevice iotDevice) {
@@ -132,23 +112,6 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
         }
         return outcome;
     }
-
-   /* public void pairDevice(BluetoothDevice device) {
-        try {
-            //if (D)
-            Log.e("TAG", "Start Pairing...");
-
-            //waitingForBonding = true;
-
-            Method m = device.getClass().getMethod("createBond", (Class[]) null);
-            m.invoke(device, (Object[]) null);
-
-            //if (D)
-            Log.e("TAG", "Pairing finished.");
-        } catch (Exception e) {
-            Log.e("TAG", e.getMessage());
-        }
-    }*/
 
     public void unpairDevice(BluetoothDevice device) {
         try {
@@ -185,6 +148,11 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
         return devicePaired;
     }
 
+    @Override
+    public Observable<Boolean> devicePairingComplete() {
+        return devicePairingEnded;
+    }
+
     public static String deviceToString(BluetoothDevice device) {
         return "[Address: " + device.getAddress() + ", Name: " + device.getName() + "]";
     }
@@ -192,8 +160,30 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
     /**
      * Starts the discovery of new Bluetooth devices nearby.
      */
-    public void startDiscovery() {
+    @Override
+    public void startDiscovery(boolean isNewID) {
+        this.isNewID = isNewID;
+
         broadcastReceiverDelegator.onDeviceDiscoveryStarted();
+
+        final BluetoothDiscoveryService.IOTDevice iotDevice = getIOTDevice();
+
+        if(!isNewID && iotDevice.hub != null) {
+            final boolean isDevicePaired = isDevicePaired(iotDevice);
+            if(isDevicePaired) {
+                onBluetoothDeviceConnected();
+                return;
+            }
+
+            unpairAllDevices();
+
+            final boolean pairOutcome = pairDevice(iotDevice.hub);
+            if(pairOutcome) {
+                onBluetoothDeviceConnected();
+            };
+        }
+
+        unpairAllDevices();
 
         // If another discovery is in progress, cancels it before starting the new one.
         if (mBtAdapter.isDiscovering()) {
@@ -202,11 +192,9 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
 
         // Tries to start the discovery. If the discovery returns false, this means that the
         // bluetooth has not started yet.
-        Log.e("TAG", "Bluetooth starting discovery.");
         if (!mBtAdapter.startDiscovery()) {
             Toast.makeText(context, "Error while starting device discovery!", Toast.LENGTH_SHORT)
                     .show();
-            Log.e("TAG", "StartDiscovery returned false. Maybe Bluetooth isn't on?");
 
             // Ends the discovery.
             broadcastReceiverDelegator.onDeviceDiscoveryEnd();
@@ -263,6 +251,7 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
     @Override
     public void onBluetoothDeviceConnected() {
         devicePaired.onNext(true);
+        devicePairingEnded.onNext(true);
     }
 
     @Override
@@ -280,6 +269,7 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
             final boolean pairOutcome = pairDevice(device);
             if(pairOutcome) {
                 iotDevice.address = device.getAddress();
+                iotDevice.hub = device;
                 localDataSource.setDevice(iotDevice);
             }
         }
@@ -296,35 +286,44 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
     }
 
     @Override
+    public void reset() {
+        pairRequest.onNext(false);
+        bluetoothDiscovery.onNext(false);
+        devicePaired.onNext(false);
+        devicePairingEnded.onNext(false);
+    }
+
+    @Override
     public void onDeviceDiscoveryEnd() {
         bluetoothDiscovery.onNext(false);
+
+        final IOTDevice iotDevice = getIOTDevice();
+        final boolean isPaired = isDevicePaired(iotDevice);
+        if(isPaired) {
+            onBluetoothDeviceConnected();
+        } else {
+            if(iotDevice.hub != null) {
+                pairDevice(iotDevice.hub);
+            }
+        }
+    }
+
+    /**
+     * Called when the Bluetooth pair request is received
+     */
+    public void onBluetoothPairingRequest() {
+        final IOTDevice iotDevice = getIOTDevice();
+        final boolean isPaired = isDevicePaired(iotDevice);
+        if(isPaired) {
+            onBluetoothDeviceConnected();
+        }
+        pairRequest.onNext(true);
     }
 
     /**
      * Called when the Bluetooth status changed.
      */
     public void onBluetoothStatusChanged() {
-        Log.e("TAG", "onBluetoothStatusChanged");
-        Set<BluetoothDevice> pairedDevice = mBtAdapter.getBondedDevices();
-        Log.e("TAG", "pairedDevice size: " + pairedDevice.size());
-
-        try {
-            if (pairedDevice.size() > 0) {
-                for (BluetoothDevice device : pairedDevice) {
-                    final String connectedDeviceName = device.getName();
-                    final String iotDeviceName = getIOTDevice().id;
-                    Log.e("TAG", "connectedDeviceName: " +connectedDeviceName);
-                    Log.e("TAG", "iotDeviceName: " + iotDeviceName);
-                    if(connectedDeviceName.equals(iotDeviceName)) {
-                        onBluetoothDeviceConnected();
-                    }
-                }
-            }
-        } catch (Exception e) {
-
-            e.printStackTrace();
-        }
-
         // Does anything only if a device discovery has been scheduled.
         if (bluetoothDiscoveryScheduled) {
 
@@ -333,14 +332,12 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
             switch (bluetoothState) {
                 case BluetoothAdapter.STATE_ON:
                     // Bluetooth is ON.
-                    Log.e("TAG", "Bluetooth succesfully enabled, starting discovery");
-                    startDiscovery();
+                    startDiscovery(isNewID);
                     // Resets the flag since this discovery has been performed.
                     bluetoothDiscoveryScheduled = false;
                     break;
                 case BluetoothAdapter.STATE_OFF:
                     // Bluetooth is OFF.
-                    Log.e("TAG", "Error while turning Bluetooth on.");
                     Toast.makeText(context, "Error while turning Bluetooth on.", Toast.LENGTH_SHORT);
                     // Resets the flag since this discovery has been performed.
                     bluetoothDiscoveryScheduled = false;
@@ -358,27 +355,14 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
     }
 
     @Override
-    public void onDevicePairingEnded() {
-        Log.e("TAG", "onDevicePairingEnded");
+    public void onDeviceBondStateChanged() {
+        Log.e("TAG", "onDeviceBondStateChanged");
 
-        Set<BluetoothDevice> pairedDevice = mBtAdapter.getBondedDevices();
-        Log.e("TAG", "pairedDevice size: " + pairedDevice.size());
+        final IOTDevice iotDevice = getIOTDevice();
+        final boolean isPaired = isDevicePaired(iotDevice);
 
-        try {
-            if (pairedDevice.size() > 0) {
-                for (BluetoothDevice device : pairedDevice) {
-                    final String connectedDeviceName = device.getName();
-                    final String iotDeviceName = getIOTDevice().id;
-                    Log.e("TAG", "connectedDeviceName: " +connectedDeviceName);
-                    Log.e("TAG", "iotDeviceName: " + iotDeviceName);
-                    if(connectedDeviceName.equals(iotDeviceName)) {
-                        onBluetoothDeviceConnected();
-                    }
-                }
-            }
-        } catch (Exception e) {
-
-            e.printStackTrace();
+        if(isPaired) {
+            onBluetoothDeviceConnected();
         }
     }
 
@@ -431,5 +415,21 @@ public class BluetoothDiscoveryServiceImpl implements BluetoothDiscoveryService,
         iOTDevice.pin = IOT_DEVICE_PIN + roomNumber;
         setIOTDevice(iOTDevice);
         return iOTDevice;
+    }
+
+    /**
+     * programmatically sets the pin for pairing
+     */
+    @Override
+    public void setBluetoothPairingPin(BluetoothDevice device) {
+        try {
+            final String stringPin = getIOTDevice().pin;
+            byte[] pin = (byte[]) BluetoothDevice.class.getMethod("convertPinToBytes", String.class).invoke(BluetoothDevice.class, stringPin);
+            device.setPin(pin);
+            device.setPairingConfirmation(false); // trying to force manual pin entry to close but doesn't work :(
+            onBluetoothPairingRequest();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

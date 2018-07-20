@@ -2,12 +2,24 @@ package mji.tapia.com.service.language;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 
 import java.util.Locale;
 
 import io.reactivex.Observable;
+import mji.tapia.com.service.util.LocaleManager;
 import mji.tapia.com.service.util.PreferenceUtils;
+import java.util.Locale;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+import android.widget.Toast;
 
 /**
  * Created by Sami on 1/26/2018.
@@ -68,6 +80,22 @@ public class LanguageManagerImpl implements LanguageManager {
         context.getResources().updateConfiguration(configuration, null);
     }
 
+    public void setLocale(String lang) {
+        Locale myLocale = new Locale(lang);
+        Configuration configuration = context.getResources().getConfiguration();
+        Resources res = context.getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+
+        //Intent refresh = new Intent(this, AndroidLocalize.class);
+        //startActivity(refresh);
+        //finish();
+
+    }
+
+
     @Override
     public Observable<Language> getLanguageChangeObservable() {
         return null;
@@ -75,7 +103,7 @@ public class LanguageManagerImpl implements LanguageManager {
 
     @Override
     public Language getDefaultLanguage() {
-        return null;
+        return Language.JAPANESE;
     }
 
     @Override

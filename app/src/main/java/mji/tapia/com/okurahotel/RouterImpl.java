@@ -121,7 +121,6 @@ public final class RouterImpl implements Router {
 
     @Override
     public void navigateToAirConScreen() {
-        //activity.startActivity(new Intent(activity, AirConActivity.class));
         if(activity instanceof RoomManagerActivity){
             Intent intent = new Intent(activity, AirConActivity.class);
             View ivCurtain = activity.findViewById(R.id.ac_icon);
@@ -158,24 +157,6 @@ public final class RouterImpl implements Router {
     public void navigateToLightSettingScreen() {
         if(activity instanceof LightActivity){
 
-            /*Intent intent = new Intent(activity, LightSettingActivity.class);
-            View ivExit = activity.findViewById(R.id.exit_icon);
-            View tvExit = activity.findViewById(R.id.exit_label);
-            //View tvWashRoom = activity.findViewById(R.id.wash_room_label);
-            //View tvFoot = activity.findViewById(R.id.foot_label);
-            View tvEntrance = activity.findViewById(R.id.room_label);
-            View tvRoom = activity.findViewById(R.id.spot_label);
-            View tvNightLight = activity.findViewById(R.id.foot_light_label);
-            Pair<View, String> p1 = Pair.create(ivExit, "exit_icon");
-            Pair<View, String> p2 = Pair.create(tvExit, "exit_label");
-            //Pair<View, String> p3 = Pair.create(tvWashRoom, "wash_room_label");
-            Pair<View, String> p4 = Pair.create(tvEntrance, "entrance_label");
-            //Pair<View, String> p5 = Pair.create(tvFoot, "foot_label");
-            Pair<View, String> p6 = Pair.create(tvNightLight, "night_light_label");
-            Pair<View, String> p7 = Pair.create(tvRoom, "room_label");
-            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,p1,p2*//*,p3*//*,p4*//*,p5*//*,p6,p7);
-
-            activity.startActivity(intent, options.toBundle());*/
         }
         else {
             activity.startActivity(new Intent(activity, LightActivity.class));
@@ -197,8 +178,8 @@ public final class RouterImpl implements Router {
     public void navigateToLanguageScreen() {
         if(activity instanceof HomeActivity){
             Intent intent = new Intent(activity, LanguageSettingActivity.class);
-            View ivLanguageSetting = activity.findViewById(R.id.language_setting_icon);
-            View tvLanguageSetting = activity.findViewById(R.id.language_setting_label);
+            View ivLanguageSetting = activity.findViewById(R.id.settings_icon);
+            View tvLanguageSetting = activity.findViewById(R.id.settings_label);
             Pair<View, String> p1 = Pair.create(ivLanguageSetting, "language_setting_icon");
             Pair<View, String> p2 = Pair.create(tvLanguageSetting, "language_setting_label");
             ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, p1/*, p2*/);

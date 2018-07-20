@@ -65,7 +65,7 @@ public interface IoTService {
 
     BluetoothSerialService getBluetoothSerialManager();
 
-    void pairBluetoothDevice(final String roomNumber);
+    void discoverBluetoothDevice(final String roomNumber);
 
     void connectSerialDevice(final String hubAddress);
 

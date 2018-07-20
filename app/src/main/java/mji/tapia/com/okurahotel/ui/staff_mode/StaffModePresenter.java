@@ -1,6 +1,5 @@
 package mji.tapia.com.okurahotel.ui.staff_mode;
 
-import android.util.Log;
 import javax.inject.Inject;
 import io.reactivex.disposables.Disposable;
 import mji.tapia.com.okurahotel.BasePresenter;
@@ -87,7 +86,9 @@ public class StaffModePresenter extends BasePresenter<StaffModeContract.View> im
         view.setRoomID(roomID);
 
         bluetoothPairDisposable = iotManager.getBluetoothDiscoveryManager().bluetoothPairRequest().subscribe(isRequest -> {
-            doIfViewNotNull(view -> view.setBluetoothPairRequest());
+            if(isRequest) {
+                doIfViewNotNull(view -> view.setBluetoothPairRequest());
+            }
         });
 
         bluetoothDiscoveryDisposable = iotManager.getBluetoothDiscoveryManager().bluetoothDiscovery().subscribe(isDiscovering -> {
@@ -96,8 +97,6 @@ public class StaffModePresenter extends BasePresenter<StaffModeContract.View> im
 
         bluetoothConnectDisposable = iotManager.getBluetoothDiscoveryManager().bluetoothConnect().subscribe(isConnected -> {
             if(isConnected) {
-                final String hubAddress = getIOTDevice().address;
-                iotManager.connectSerialDevice(hubAddress);
                 doIfViewNotNull(view -> view.setBluetoothConnected());
             }
         });
@@ -124,7 +123,7 @@ public class StaffModePresenter extends BasePresenter<StaffModeContract.View> im
 
     @Override
     public void onBluetoothSelect(String roomNumber) {
-        iotManager.pairBluetoothDevice(roomNumber);
+        iotManager.discoverBluetoothDevice(roomNumber);
     }
 
     @Override

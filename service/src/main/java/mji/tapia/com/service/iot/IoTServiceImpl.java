@@ -1,5 +1,6 @@
 package mji.tapia.com.service.iot;
 
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.util.Log;
 import java.util.HashMap;
@@ -25,6 +26,8 @@ import mji.tapia.com.service.iot.message.IoTMessageManagerImpl;
 import mji.tapia.com.service.iot.room_state.IoTRoomStateManager;
 import mji.tapia.com.service.iot.room_state.IoTRoomStateManagerImpl;
 
+import static mji.tapia.com.service.iot.bluetooth.BluetoothDiscoveryServiceImpl.IOT_DEVICE_ID;
+
 /**
  * Created by Sami on 2/2/2018.
  */
@@ -46,6 +49,8 @@ public class IoTServiceImpl implements IoTService {
     private BluetoothDiscoveryService bluetoothDiscoveryService;
 
     private BluetoothSerialService bluetoothSerialService;
+
+    private Disposable onBluetoothPairComplete;
 
     public IoTServiceImpl(BluetoothDiscoveryService bluetoothDiscoveryService, BluetoothSerialService bluetoothSerialService) {
         this.bluetoothDiscoveryService = bluetoothDiscoveryService;
@@ -102,23 +107,45 @@ public class IoTServiceImpl implements IoTService {
 
     @Override
     public void start() {
-        final String hubAddress = bluetoothDiscoveryService.getIOTDevice().address;
-        connectSerialDevice(hubAddress);
+        final BluetoothDiscoveryService.IOTDevice iotDevice = bluetoothDiscoveryService.getIOTDevice();
+        final String hubAddress = iotDevice.address;
+
+        //connectSerialDevice(hubAddress);
+
+        if(iotDevice.hub != null) {
+            onBluetoothPairComplete = getBluetoothDiscoveryManager().devicePairingComplete().subscribe(isFinished -> {
+                if(isFinished) {
+                    connectSerialDevice(hubAddress);
+
+                    if(onBluetoothPairComplete != null) {
+                        onBluetoothPairComplete.dispose();
+                        getBluetoothDiscoveryManager().reset();
+                    }
+                }
+            });
+
+            bluetoothDiscoveryService.unpairAllDevices();
+            bluetoothDiscoveryService.pairDevice(iotDevice.hub);
+        }
     }
 
     @Override
-    public void pairBluetoothDevice(final String roomNumber) {
+    public void discoverBluetoothDevice(final String roomNumber) {
+        final BluetoothDiscoveryService.IOTDevice iotDevice = bluetoothDiscoveryService.getIOTDevice();
+        final String roomID = IOT_DEVICE_ID + roomNumber;
+        final boolean isNewID = !roomID.equals(iotDevice.id);
+
         bluetoothDiscoveryService.setUpIOTDevice(roomNumber);
-        bluetoothDiscoveryService.unpairAllDevices();
 
         // If the bluetooth is not enabled, turns it on.
         if (!bluetoothDiscoveryService.isBluetoothEnabled()) {
             bluetoothDiscoveryService.turnOnBluetoothAndScheduleDiscovery();
         } else {
+
             //Prevents the user from spamming the button and thus glitching the UI.
             if (!bluetoothDiscoveryService.isDiscovering()) {
                 // Starts the discovery.
-                bluetoothDiscoveryService.startDiscovery();
+                bluetoothDiscoveryService.startDiscovery(isNewID);
             } else {
                 bluetoothDiscoveryService.cancelDiscovery();
             }
@@ -136,7 +163,9 @@ public class IoTServiceImpl implements IoTService {
         }
         else {
             List<BluetoothDevice> pairedDevices = bluetoothDiscoveryService.getPairedDevices();
-            Log.e(TAG, "pairedDevices size: " + pairedDevices.size());
+
+            Log.e("TAG", "pairedDevices size: " + pairedDevices.size());
+
             BluetoothDevice hubDevice = null;
             for (BluetoothDevice bluetoothDevice: pairedDevices) {
                 if(bluetoothDevice.getAddress().equals(hubAddress))

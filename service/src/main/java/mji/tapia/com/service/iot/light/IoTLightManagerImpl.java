@@ -18,9 +18,9 @@ public class IoTLightManagerImpl implements IoTLightManager {
     public static final int SWITCH_OFF = 0;
     public static final int SWITCH_ON = 1;
 
-    public static final String COMMAND_LIGHT = "LT16";
-    public static final String COMMAND_SPOT = "LT17";
-    public static final String COMMAND_FOOT = "LT5";
+    public static final String COMMAND_LIGHT = "LT3";
+    public static final String COMMAND_SPOT = "LT1";
+    public static final String COMMAND_FOOT = "LT2";
 
     public static final String[] COMMANDS_ALL = new String[]{COMMAND_LIGHT, COMMAND_SPOT, COMMAND_FOOT};
 
@@ -48,17 +48,17 @@ public class IoTLightManagerImpl implements IoTLightManager {
         switch (command.name) {
             case COMMAND_LIGHT:
                 int value = (int) command.params.get(0);
-                boolean isOn  = (value == SWITCH_ON);
+                boolean isOn = (value == SWITCH_ON);
                 lightBehaviorSubject.onNext(isOn);
                 break;
             case COMMAND_SPOT:
                 value = (int) command.params.get(0);
-                isOn  = (value == SWITCH_ON);
+                isOn = (value == SWITCH_ON);
                 spotBehaviorSubject.onNext(isOn);
                 break;
             case COMMAND_FOOT:
                 value = (int) command.params.get(0);
-                isOn  = (value == SWITCH_ON);
+                isOn = (value == SWITCH_ON);
                 footBehaviorSubject.onNext(isOn);
                 break;
         }

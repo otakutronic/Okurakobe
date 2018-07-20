@@ -2,8 +2,12 @@ package mji.tapia.com.okurahotel.ui.splash;
 
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+
 import io.reactivex.Completable;
 import mji.tapia.com.okurahotel.BasePresenter;
+import mji.tapia.com.service.language.LanguageManager;
+import mji.tapia.com.service.tts.TTSService;
 
 /**
  * Created by Sami on 9/21/2017.
@@ -11,8 +15,13 @@ import mji.tapia.com.okurahotel.BasePresenter;
 
 public class SplashPresenter extends BasePresenter<SplashContract.View> implements SplashContract.Presenter {
 
-    private boolean initFinish = false;
+    @Inject
+    LanguageManager languageManager;
 
+    @Inject
+    TTSService ttsService;
+
+    private boolean initFinish = false;
 
     public SplashPresenter(SplashContract.View view) {
         super(view);
@@ -21,16 +30,18 @@ public class SplashPresenter extends BasePresenter<SplashContract.View> implemen
     @Override
     public void start() {
         super.start();
-        initFinish = false;
-        viewActionQueue.subscribeTo(Completable.timer(2000, TimeUnit.MILLISECONDS),view -> {
-            initFinish = true;
-            view.stopLoadingAnimation();
-        }, Throwable::printStackTrace);
     }
 
     @Override
     public void activate() {
         super.activate();
+        languageManager.setCurrentLanguage(languageManager.getDefaultLanguage());
+        initFinish = false;
+
+        viewActionQueue.subscribeTo(Completable.mergeArray(ttsService.init(), Completable.timer(2000, TimeUnit.MILLISECONDS)),view -> {
+            initFinish = true;
+            view.stopLoadingAnimation();
+        }, Throwable::printStackTrace);
     }
 
     @Override

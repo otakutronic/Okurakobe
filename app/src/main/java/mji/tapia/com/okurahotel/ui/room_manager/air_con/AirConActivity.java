@@ -28,8 +28,6 @@ public class AirConActivity extends BaseActivity implements AirConContract.View{
     @BindView(R.id.exit_button)
     View back_bt;
 
-    private boolean isResumed = false;
-
     @Override
     protected void inject(ActivityComponent activityComponent) {
         activityComponent.inject(this);
@@ -63,13 +61,11 @@ public class AirConActivity extends BaseActivity implements AirConContract.View{
     @Override
     protected void onResume() {
         super.onResume();
-        isResumed = true;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        isResumed = false;
     }
 
     @Override

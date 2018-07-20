@@ -13,13 +13,7 @@ public interface CurtainContract {
 
     interface Presenter extends ScopedPresenter {
 
-        //void raiseLace();
-
-        //void stopLace();
-
-        //void closeLace();
-
-        void raiseCurtains();
+        void openCurtains();
 
         void stopCurtains();
 

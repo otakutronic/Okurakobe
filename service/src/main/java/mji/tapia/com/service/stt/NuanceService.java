@@ -16,10 +16,12 @@ import com.nuance.speechkit.TransactionException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 import io.reactivex.subjects.PublishSubject;
+import mji.tapia.com.service.language.LanguageManager;
 
 /**
  * Created by Sami on 10/31/2017.
@@ -56,8 +58,12 @@ public class NuanceService  extends Transaction.Listener implements STTService {
 
     private BehaviorSubject<STTState> sttStateBehaviorSubject = BehaviorSubject.create();
 
-    public NuanceService(Context context) {
+    private LanguageManager languageManager;
+
+    public NuanceService(Context context, LanguageManager languageManager) {
+        Log.e("TAG", "languageManager " + languageManager);
         this.context = context;
+        this.languageManager = languageManager;
         speechSession = Session.Factory.session(context, SERVER_URI, APP_KEY);
         loadEarcons();
         sttStateBehaviorSubject.onNext(STTState.IDLE);
@@ -70,9 +76,15 @@ public class NuanceService  extends Transaction.Listener implements STTService {
 
     @Override
     public void listen() {
+        listen(languageManager.getCurrentLanguage());
+
+    }
+
+    @Override
+    public void listen(LanguageManager.Language language) {
         if (sttStateBehaviorSubject.getValue() == STTState.IDLE) {
             isCancelled = false;
-            recognize();
+            recognize(language);
         }
     }
 
@@ -93,7 +105,7 @@ public class NuanceService  extends Transaction.Listener implements STTService {
     }
 
 
-    public void recognize() {
+    public void recognize(LanguageManager.Language language) {
         //Setup our Reco transaction options.
         if (sttStateBehaviorSubject.getValue() != STTState.LISTENING) {
             Transaction.Options options = new Transaction.Options();
@@ -103,7 +115,21 @@ public class NuanceService  extends Transaction.Listener implements STTService {
 //                options.setLanguage(new com.nuance.speechkit.Language("fra-FRA"));
 //            }
 //            else if(language.equals(com.tapia.mji.tapia.Languages.Language.LanguageID.JAPANESE)){
-            options.setLanguage(new com.nuance.speechkit.Language("jpn-JPN"));
+            String languageString;
+            switch (language) {
+                case ENGLISH:
+                    languageString = "eng-USA";
+                    break;
+                case JAPANESE:
+                    languageString = "jpn-JPN";
+                    break;
+                default:
+                    languageString = "jpn-JPN";
+                    break;
+            }
+
+
+            options.setLanguage(new com.nuance.speechkit.Language(languageString));
 //            }
 //            else if(language.equals(com.tapia.mji.tapia.Languages.Language.LanguageID.ARABIC)){
 //                options.setLanguage(new com.nuance.speechkit.Language("ara-XWW"));
@@ -175,7 +201,7 @@ public class NuanceService  extends Transaction.Listener implements STTService {
                 setState(STTState.IDLE);
                 break;
             default:
-                recognize();
+                recognize(languageManager.getCurrentLanguage());
                 break;
         }
     }
@@ -205,11 +231,14 @@ public class NuanceService  extends Transaction.Listener implements STTService {
         if (recoTransaction != null) {
             recoTransaction.cancel();
         }
+        isCancelled = true;
+
+        setState(STTState.IDLE);
     }
 
     public void restartListening() {
         stopRecording();
-        recognize();
+        recognize(languageManager.getCurrentLanguage());
     }
 
 

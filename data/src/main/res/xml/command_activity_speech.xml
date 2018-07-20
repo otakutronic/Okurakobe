@@ -16,6 +16,7 @@
         <group>
             <keyword>開けて</keyword>
             <keyword >開いて</keyword>
+            <keyword >オープン</keyword>
         </group>
     </command>
 
@@ -26,54 +27,26 @@
         <group>
             <keyword>閉じて</keyword>
             <keyword >閉めて</keyword>
+            <keyword >クローズ</keyword>
         </group>
     </command>
 
-    <command id="open_lace">
+    <command id="stop_curtain">
         <group>
-            <keyword>レース</keyword>
+            <keyword>カーテン</keyword>
         </group>
         <group>
-            <keyword>開けて</keyword>
-            <keyword >開いて</keyword>
-        </group>
-    </command>
-
-    <command id="close_lace">
-        <group>
-            <keyword>レース</keyword>
-        </group>
-        <group>
-            <keyword>閉じて</keyword>
-            <keyword >閉めて</keyword>
-        </group>
-    </command>
-
-
-    <command id="turn_on_entrance">
-        <group>
-            <keyword>入口</keyword>
-            <keyword >入り口</keyword>
-        </group>
-        <group>
-            <keyword>つけて</keyword>
-        </group>
-    </command>
-
-    <command id="turn_off_entrance">
-        <group>
-            <keyword>入口</keyword>
-            <keyword >入り口</keyword>
-        </group>
-        <group>
-            <keyword>消して</keyword>
+            <keyword >とめて</keyword>
+            <keyword >ストップ</keyword>
         </group>
     </command>
 
     <command id="turn_on_room">
         <group>
-            <keyword>部屋</keyword>
+            <keyword >ルーム</keyword>
             <keyword >室内灯</keyword>
+            <keyword >電気</keyword>
+            <keyword>部屋</keyword>
         </group>
         <group>
             <keyword>つけて</keyword>
@@ -82,70 +55,31 @@
 
     <command id="turn_off_room">
         <group>
+            <keyword >ルーム</keyword>
             <keyword>部屋</keyword>
             <keyword >室内灯</keyword>
+            <keyword >電気</keyword>
         </group>
         <group>
             <keyword>消して</keyword>
         </group>
     </command>
 
-    <command id="turn_on_indirect">
+    <command id="turn_on_spot">
         <group>
-            <keyword>ナイトライト</keyword>
-            <keyword>間接照明</keyword>
-            <keyword >室内間接</keyword>
+            <keyword>スポット</keyword>
+            <keyword>天井灯</keyword>
+
         </group>
         <group>
             <keyword>つけて</keyword>
         </group>
     </command>
 
-    <command id="turn_off_indirect">
+    <command id="turn_off_spot">
         <group>
-            <keyword>ナイトライト</keyword>
-            <keyword>間接照明</keyword>
-            <keyword >室内間接</keyword>
-        </group>
-        <group>
-            <keyword>消して</keyword>
-        </group>
-    </command>
+            <keyword>天井灯</keyword>
 
-    <!--<command id="turn_on_minibar">-->
-        <!--<group>-->
-            <!--<keyword>ミニバー</keyword>-->
-        <!--</group>-->
-        <!--<group>
-            <keyword>つけて</keyword>
-        </group>-->
-    <!--</command>-->
-
-    <!--<command id="turn_off_minibar">-->
-        <!--<group>-->
-            <!--<keyword>ミニバー</keyword>-->
-        <!--</group>-->
-        <!--<group>
-            <keyword>消して</keyword>
-        </group>-->
-    <!--</command>-->
-
-    <command id="turn_on_washroom">
-        <group>
-            <keyword>洗面所</keyword>
-            <keyword>バスルーム</keyword>
-            <keyword >洗面</keyword>
-        </group>
-        <group>
-            <keyword>つけて</keyword>
-        </group>
-    </command>
-
-    <command id="turn_off_washroom">
-        <group>
-            <keyword>洗面所</keyword>
-            <keyword>バスルーム</keyword>
-            <keyword >洗面</keyword>
         </group>
         <group>
             <keyword>消して</keyword>
@@ -154,7 +88,8 @@
 
     <command id="turn_on_foot">
         <group>
-            <keyword>フットライト</keyword>
+            <keyword>フット</keyword>
+            <keyword>足元灯</keyword>
             <keyword>足元</keyword>
         </group>
         <group>
@@ -164,7 +99,8 @@
 
     <command id="turn_off_foot">
         <group>
-            <keyword>フットライト</keyword>
+            <keyword>フット</keyword>
+            <keyword>足元灯</keyword>
             <keyword>足元</keyword>
         </group>
         <group>

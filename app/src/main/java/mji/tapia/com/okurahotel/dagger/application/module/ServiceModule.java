@@ -55,8 +55,8 @@ public final class ServiceModule {
 
     @Provides
     @Singleton
-    STTService provideSTTService(final @ForApplication Context context) {
-        return  new NuanceService(context);
+    STTService provideSTTService(final @ForApplication Context context, LanguageManager languageManager) {
+        return  new NuanceService(context, languageManager);
     }
 
     @Provides

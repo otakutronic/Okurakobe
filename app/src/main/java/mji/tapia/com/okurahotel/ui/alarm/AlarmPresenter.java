@@ -15,8 +15,6 @@ public class AlarmPresenter extends BasePresenter<AlarmContract.View> implements
     @Inject
     AlarmCallManager alarmManager;
 
-    private Disposable alarmStateDisposable;
-
     public AlarmPresenter(AlarmContract.View view) {
         super(view);
     }
@@ -34,9 +32,6 @@ public class AlarmPresenter extends BasePresenter<AlarmContract.View> implements
     @Override
     public void deactivate() {
         super.deactivate();
-        if(alarmStateDisposable != null) {
-            alarmStateDisposable.dispose();
-        }
     }
 
     @Override

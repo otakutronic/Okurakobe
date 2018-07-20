@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Looper;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
@@ -32,6 +33,7 @@ import mji.tapia.com.service.alarm.AlarmCallManager;
 import mji.tapia.com.service.alarm.AlarmNotificationService;
 import mji.tapia.com.service.error_manager.ErrorManager;
 import mji.tapia.com.service.iot.IoTService;
+import mji.tapia.com.service.util.LocaleManager;
 
 /**
  * Created by Sami on 9/22/2017.
@@ -140,6 +142,13 @@ public class OkuraHotelApplication extends Application {
                     errorDialog.show();
                     Looper.loop();
         });
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        LocaleManager.setLocale(this);
+        Log.d(TAG, "onConfigurationChanged: " + newConfig.locale.getLanguage());
     }
 
     public static double getVersion(){

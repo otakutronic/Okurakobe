@@ -1,13 +1,11 @@
 package mji.tapia.com.okurahotel.ui.staff_mode;
 
-import android.bluetooth.BluetoothDevice;
-import android.support.v4.app.FragmentActivity;
 import mji.tapia.com.okurahotel.BaseView;
 import mji.tapia.com.okurahotel.ScopedPresenter;
 import mji.tapia.com.service.iot.bluetooth.BluetoothDiscoveryService;
 
 /**
- * Created by Sami on 9/22/2017.
+ * Created by Andy on 5/22/2018
  */
 
 public interface StaffModeContract {

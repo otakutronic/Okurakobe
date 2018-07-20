@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -68,10 +69,12 @@ public class SleepActivity extends BaseActivity implements SleepContract.View{
         activityComponent.inject(this);
     }
 
-
     @Override
     public void updateClock(Date date) {
-        String timeString = DateFormat.format("h:mm",date).toString();
+        //String timeString = DateFormat.format("h:mm",date).toString();
+        SimpleDateFormat simpDate;
+        simpDate = new SimpleDateFormat("HH:mm");
+        final String timeString = simpDate.format(date).toString();
         clock_tv.setText(timeString);
     }
 }

@@ -1,15 +1,10 @@
 package mji.tapia.com.okurahotel.ui.speech;
 
 import android.app.Activity;
-
-
 import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
-
 import javax.inject.Inject;
-
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -17,7 +12,6 @@ import mji.tapia.com.data.voice_command.VoiceCommand;
 import mji.tapia.com.data.voice_command.VoiceCommandRepository;
 import mji.tapia.com.okurahotel.BasePresenter;
 import mji.tapia.com.okurahotel.R;
-import mji.tapia.com.service.iot.IoTService;
 import mji.tapia.com.service.iot.air_con.IoTAirConManager;
 import mji.tapia.com.service.iot.curtain.IoTCurtainManager;
 import mji.tapia.com.service.iot.light.IoTLightManager;
@@ -32,27 +26,19 @@ public class SpeechPresenter extends BasePresenter<SpeechContract.View> implemen
 
     static private final String  OPEN_CURTAIN = "open_curtain";
     static private final String  CLOSE_CURTAIN = "close_curtain";
-    static private final String  OPEN_LACE = "open_lace";
-    static private final String  CLOSE_LACE = "close_lace";
-    static private final String  ENTRANCE_LIGHT_ON = "turn_on_entrance";
-    static private final String  ENTRANCE_LIGHT_OFF = "turn_off_entrance";
+    static private final String  STOP_CURTAIN = "stop_curtain";
+
     static private final String  ROOM_LIGHT_ON = "turn_on_room";
     static private final String  ROOM_LIGHT_OFF = "turn_off_room";
     static private final String  SPOT_LIGHT_ON = "turn_on_spot";
     static private final String  SPOT_LIGHT_OFF = "turn_off_spot";
-    static private final String  NIGHT_LIGHT_ON = "turn_on_indirect";
-    static private final String  NIGHT_LIGHT_OFF = "turn_off_indirect";
-    static private final String  MINIBAR_LIGHT_ON = "turn_on_minibar";
-    static private final String  MINIBAR_LIGHT_OFF = "turn_off_minibar";
-    static private final String  WASHROOM_LIGHT_ON = "turn_on_washroom";
-    static private final String  WASHROOM_LIGHT_OFF = "turn_off_washroom";
     static private final String  FOOT_LIGHT_ON = "turn_on_foot";
     static private final String  FOOT_LIGHT_OFF = "turn_off_foot";
     static private final String  ALL_LIGHT_ON = "turn_on_all";
     static private final String  ALL_LIGHT_OFF = "turn_off_all";
 
     static private final String  TURN_AIR_CON_ON = "turn_air_con_on";
-
+    static private final String  TURN_AIR_CON_OFF = "turn_air_con_off";
 
     @Inject
     IoTLightManager lightManager;
@@ -109,10 +95,11 @@ public class SpeechPresenter extends BasePresenter<SpeechContract.View> implemen
         commandActionMap.put(FOOT_LIGHT_OFF, () -> lightManager.setLightState(2, false));
 
         commandActionMap.put(OPEN_CURTAIN, () -> curtainManager.setCurtainState(IoTCurtainManager.IoTCurtain.CURTAIN, IoTCurtainManager.CurtainState.OPEN));
-        commandActionMap.put(CLOSE_CURTAIN, () -> curtainManager.setCurtainState(IoTCurtainManager.IoTCurtain.CURTAIN, IoTCurtainManager.CurtainState.STOP));
+        commandActionMap.put(STOP_CURTAIN, () -> curtainManager.setCurtainState(IoTCurtainManager.IoTCurtain.CURTAIN, IoTCurtainManager.CurtainState.STOP));
+        commandActionMap.put(CLOSE_CURTAIN, () -> curtainManager.setCurtainState(IoTCurtainManager.IoTCurtain.CURTAIN, IoTCurtainManager.CurtainState.CLOSE));
 
         commandActionMap.put(TURN_AIR_CON_ON, () -> airConManager.setAirConState(true));
-        commandActionMap.put(TURN_AIR_CON_ON, () -> airConManager.setAirConState(false));
+        commandActionMap.put(TURN_AIR_CON_OFF, () -> airConManager.setAirConState(false));
     }
 
     @Override
@@ -209,40 +196,28 @@ public class SpeechPresenter extends BasePresenter<SpeechContract.View> implemen
                 return activity.getString(R.string.curtain_opened);
             case CLOSE_CURTAIN:
                 return activity.getString(R.string.curtain_closed);
-            case OPEN_LACE:
-                return activity.getString(R.string.lace_opened);
-            case CLOSE_LACE:
-                return activity.getString(R.string.lace_closed);
-            case ENTRANCE_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
-            case ENTRANCE_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
+            case STOP_CURTAIN:
+                return activity.getString(R.string.curtain_stopped);
             case ROOM_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
+                return activity.getString(R.string.room_turned_on);
             case ROOM_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
-            case NIGHT_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
-            case NIGHT_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
-            case MINIBAR_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
-            case MINIBAR_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
-            case WASHROOM_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
-            case WASHROOM_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
+                return activity.getString(R.string.room_turned_off);
             case FOOT_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
+                return activity.getString(R.string.foot_turned_on);
             case FOOT_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
+                return activity.getString(R.string.foot_turned_off);
+            case SPOT_LIGHT_ON:
+                return activity.getString(R.string.spot_turned_on);
+            case SPOT_LIGHT_OFF:
+                return activity.getString(R.string.spot_turned_off);
             case ALL_LIGHT_ON:
-                return activity.getString(R.string.light_turned_on);
+                return activity.getString(R.string.all_turned_on);
             case ALL_LIGHT_OFF:
-                return activity.getString(R.string.light_turned_off);
+                return activity.getString(R.string.all_turned_off);
             case TURN_AIR_CON_ON:
-                return "アイコンをつけました";
+                return activity.getString(R.string.ac_turned_on);
+            case TURN_AIR_CON_OFF:
+                return activity.getString(R.string.ac_turned_off);
         }
         return null;
     }

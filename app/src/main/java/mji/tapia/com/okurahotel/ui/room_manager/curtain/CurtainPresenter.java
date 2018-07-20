@@ -45,8 +45,8 @@ public class CurtainPresenter extends BasePresenter<CurtainContract.View> implem
     }
 
     @Override
-    public void raiseCurtains() {
-        Log.e("TAG", "raiseCurtains");
+    public void openCurtains() {
+        Log.e("TAG", "openCurtains");
         curtainManager.setCurtainState(IoTCurtainManager.IoTCurtain.CURTAIN, IoTCurtainManager.CurtainState.OPEN);
     }
 
